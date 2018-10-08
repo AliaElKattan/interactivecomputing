@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	 <script src="../p5/p5.min.js"></script>
+    <script src="../p5/addons/p5.dom.min.js"></script>
+    <script src="../p5/addons/p5.sound.min.js"></script>
+    <script src="sketch2.js"></script>
+<script src="p5.js"> </script>
+
+<script src="jquery-3.2.1.js"></script>
+
+    <style> body {padding: 0; margin: 0;} </style>
+
+
+
+</head>
+
+
+<body>
+<h2>Assignment 3</h2>
+
+<div id="inst">
+
+<h3> Instructions </h3>
+<p> Use the arrow keys or WASD to move the car sideways and to the front.</p>
+<p> Reach the 'finish' sign without crashing.</p>
+</div>
+
+
+<div id="changespeed">
+<input type="range" id="range1" min="1" max="10" step="1" value="1" onchange="updateRange(this);" id="speedinput" class="slider">
+<p> Move the slider right to increase car's speed. </p>
+</div>
+
+
+<div id="writeup">
+	<h3> Overview</h3>
+	<p> Building my first game, I wanted to stick with a familiar concept so I can spend more time making sure I understand the technical aspects of building a simple p5 experience. The game I chose to build was inspired by 'Crazy Taxi', a simple game I grew up playing a lot with my younger brother. </p>
+
+	<img src="crazytaxi.jpg" style="width: 40%; height: 40%; margin-left: 30%;"alt="screenshot from crazy taxi">
+
+	<p> The basic idea of the game is to control a car as it drives around obstacles to reach the finish line, and switch lanes by moving right or left. The scoring system in that game is based on being able to make it to the end of the level in a specific time, so the levels start out fairly easily and become more difficult as the allotted time decreases and the level's length increases. Since that would require a much lengthier game than what I could build, I decided to have the goal of the game to simply reach the finish line without finishing your lives. While in Crazy Taxi, nothing happens when you bump into a car, this makes you lose a life in my game (visualized by the hearts on screen). </p>
+
+	<p> While I first thought of making the second level more difficutl by increasing the obstacles or the speeds, I decided to switch it up and have the cars moving in a different direction altogether. This idea was initially following an idea I had to name the levels after the three places where I live: Abu Dhabi, New York, and Cairo. In that example, AD would be the first level, where cars are in their lanes and everything is running relatively smoothly, NY would be a little more complicated, and Cairo would be utter chaos. While I eventually decided to set aside the themes/naming because I felt like it would require a greater level of detail to make sense in the game, I still preferred to have the levels be of different structure.</p>
+
+<p> Level 1 (left), level 2 (right): </p>
+<img src="level1.jpg" style="width: 40%; height: 40%; "alt="screenshot of level 1">
+<img src="level2.jpg" style="width: 40%; height: 40%; margin-left: 5%; "alt="screenshot of level 2">
+
+<br>
+<h3> Makey-makey Documentation </h3>
+<p>In class, my group worked with the Makey-makey controllers to make a physical controller to play web-based games. We made a head band out of aluminum foil to complete the circuit (since skin is conductive). As for the buttons, we made them with playdough on a piece of paper. The circuit worked well and was a lot of fun! Below are some pictures of the physical computing system in actoin. </p>
+
+<img src="1.jpg" style="width: 40%; height: 40%; "alt="documentation picture 1">
+<img src="3.jpg" style="width: 40%; height: 40%; margin-left: 5%; "alt="documentation picture 2">
+
+
+<div>
+
+
+<script>
+console.log("speedinput: " +speedinput);
+</script>
+
+<style>
+
+body {
+	background-color: rgb(240,240,255);
+}
+
+#writeup {
+	margin-top: 10%;
+	font-family: Arial;
+	margin-left: 20%;
+	margin-right: 20%;
+	text-align: justify;
+	margin-bottom: 10%;
+}
+
+#container {
+	display: flex;
+}
+#inst {
+	width: 20%;
+	margin-left: 70%;
+	margin-right: 10%;
+	margin-top: 12%;
+	font-family: Arial;
+}
+
+
+#changespeed {
+width: 20%;
+margin-left: 70%;
+margin-right:10%;
+font-family: Arial;
+}
+
+/*slider styling code copied from a previous project -- could not find original source */
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+     appearance: none;
+    width: 90%; /* Full-width */
+    margin-left: 0%;
+    height: 20px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: rgb(255,100,100);
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #4CAF50;
+    cursor: pointer; /* Cursor on hover */
+
+}
+h2 {
+	font-family:Arial;
+	margin-left: 41%;
+}
+
+
+
+</style>
+
+
+
+
+
+</body>
+
+
+</html>
